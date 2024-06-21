@@ -1,6 +1,6 @@
 {
-  "name": "if3m-project",
-  "version": "1.0.0",
+  "name": "IF3M-Emprendedores",
+  "version": "1.1.0",
   "description": "Proyecto Programado para IF3000 Programación II, Universidad de Costa Rica",
   "main": "app.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "Faurizio Gonzalez Alfaro",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
