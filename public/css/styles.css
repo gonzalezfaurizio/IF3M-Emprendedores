@@ -1,0 +1,302 @@
+/* Importar Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header,
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 0 0 10px 10px;
+}
+
+header .container,
+footer .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #66b2ff;
+}
+
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: auto;
+    min-height: calc(100vh - 140px);
+    /* Adjusted for header and footer */
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #f0f4f8;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #f0f4f8;    
+}
+
+form {
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #66b2ff;
+}
+
+#product-list,
+#compra-list,
+#venta-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.product-item,
+.compra-item,
+.venta-item {
+    background-color: white;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 1em);
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.product-item:hover,
+.compra-item:hover,
+.venta-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: #003366;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #66b2ff;
+    transform: translateY(-2px);
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.product-item,
+.compra-item,
+.venta-item {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hero {
+    background: url('path/to/your/hero-image.jpg') no-repeat center center/cover;
+    padding: 5em 0;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 51, 102, 0.8);
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 51, 102, 0.8);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.hero .btn {
+    padding: 0.8em 2em;
+    background-color: #66b2ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #003366;
+}
+
+.features {
+    padding: 3em 0;
+    background-color: #e0e7ff;
+    text-align: center;
+}
+
+.features .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.features .feature {
+    flex: 1;
+    padding: 1em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.features .feature:hover {
+    transform: scale(1.05);
+}
+
+.features .feature i {
+    font-size: 3em;
+    color: #003366;
+    margin-bottom: 0.5em;
+}
+
+.features .feature h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    color: #003366;
+}
+
+.product-list {
+    padding: 3em 0;
+    background-color: #f0f4f8;
+}
+
+.product-list .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.product-item {
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 1em);
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}

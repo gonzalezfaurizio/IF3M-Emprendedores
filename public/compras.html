@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IF3M - Compras</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Compras</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="compras.html">Compras</a></li>
+            <li><a href="ventas.html">Ventas</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="container">
+        <h2>Registrar Nueva Compra</h2>
+        <form id="compra-form">
+          <label for="idProducto">Código del Producto:</label>
+          <input type="number" id="idProducto" name="idProducto" required />
+          <label for="unidades">Unidades:</label>
+          <input type="number" id="unidades" name="unidades" required />
+          <button type="submit">Registrar Compra</button>
+        </form>
+        <h2>Lista de Compras</h2>
+        <div id="compra-list"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 IF3M. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
