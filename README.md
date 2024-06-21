@@ -50,3 +50,17 @@ Una vez que el servidor esté en funcionamiento, abre tu navegador web y navega 
 
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Autores
+
+- **C33317 Gonzalez Alfaro Faurizio**
+- **C30305 Alvarado Barrantes Giovanny**
+- **C36773 Rodriguez Rodriguez Andrey**
+- **C33125 Garcia Barrantes Fabiola**
+- **C38727 Zuñiga Jinesta Jafeth**
+
+## Contacto
+
+Si tienes alguna pregunta o sugerencia, no dudes en contactar al autor del proyecto en [fauriziogonzalez@gmail.com](mailto:fauriziogonzalez@gmail.com).
+
+---
