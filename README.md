@@ -2,16 +2,9 @@
 
 Proyecto programado para IF3000 Programación II, Universidad de Costa Rica. Plataforma web para apoyar a emprendedores locales mediante la compra y venta de productos únicos y hechos a mano.
 
-## Tabla de Contenidos
-
-- [Descripción](#descripción)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 
 ## Descripción
+
 IF3M-Emprendedores es una plataforma web diseñada para facilitar la compra y venta de productos únicos creados por emprendedores locales. Los usuarios pueden registrar productos, realizar compras y ventas, y gestionar la información a través de una interfaz amigable y moderna.
 
 ## Instalación
