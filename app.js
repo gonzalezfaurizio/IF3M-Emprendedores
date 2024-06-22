@@ -1,13 +1,30 @@
+/**
+ * @fileoverview Aplicación principal para manejar rutas y middleware en un servidor Express.
+ */
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const multer = require("multer");
+
+/**
+ * Aplicación Express.
+ * @constant {Object}
+ */
 const app = express();
+
+/**
+ * Puerto en el que el servidor escucha las conexiones.
+ * @constant {number}
+ */
 const port = 3000;
 
-// Configuración de multer para manejar archivos de imagen
+/**
+ * Middleware para manejar la carga de archivos.
+ * @constant {Object}
+ */
 const upload = multer({ dest: "public/images/" });
 
 // Middleware
@@ -15,7 +32,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// Configuración de sesiones
 app.use(
   session({
     secret: "mySecretKey",
@@ -24,7 +40,13 @@ app.use(
   })
 );
 
-// Middleware para verificar autenticación
+/**
+ * Middleware para verificar si el usuario está autenticado.
+ *
+ * @param {Object} req - Objeto de solicitud.
+ * @param {Object} res - Objeto de respuesta.
+ * @param {Function} next - Función para pasar al siguiente middleware.
+ */
 function isAuthenticated(req, res, next) {
   if (req.session.user) {
     return next();
@@ -33,7 +55,12 @@ function isAuthenticated(req, res, next) {
   }
 }
 
-// Ruta para el inicio de sesión
+/**
+ * Ruta para manejar el inicio de sesión de los usuarios.
+ *
+ * @param {Object} req - Objeto de solicitud.
+ * @param {Object} res - Objeto de respuesta.
+ */
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
   fs.readFile("./data/usuarios.json", (err, data) => {
@@ -49,12 +76,24 @@ app.post("/login", (req, res) => {
   });
 });
 
-// Rutas protegidas
+/**
+ * Ruta protegida para productos.
+ */
 app.use("/productos", isAuthenticated, require("./routes/productos"));
+
+/**
+ * Ruta protegida para compras.
+ */
 app.use("/compras", isAuthenticated, require("./routes/compras"));
+
+/**
+ * Ruta protegida para ventas.
+ */
 app.use("/ventas", isAuthenticated, require("./routes/ventas"));
 
-// Inicio del servidor
+/**
+ * Inicia el servidor en el puerto especificado.
+ */
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

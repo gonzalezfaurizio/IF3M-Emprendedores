@@ -3,31 +3,50 @@ const fs = require("fs");
 const router = express.Router();
 const filePath = "./data/compras.json";
 
-// Leer compras
+/**
+ * @typedef {Object} Compra
+ * @property {number} id - El identificador único de la compra.
+ * @property {string} producto - El nombre del producto comprado.
+ * @property {number} cantidad - La cantidad del producto comprado.
+ * @property {number} precio - El precio del producto comprado.
+ */
+
+/**
+ * Lee el archivo JSON de compras y responde con su contenido.
+ * @name LeerCompras
+ * @route {GET} /
+ * @returns {Array<Compra>} Un array de objetos de compras.
+ */
 router.get("/", (req, res) => {
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      return res.status(500).send("Error reading file");
+      return res.status(500).send("Error al leer el archivo");
     }
     res.send(JSON.parse(data));
   });
 });
 
-// Agregar compra
+/**
+ * Agrega una nueva compra al archivo JSON de compras.
+ * @name AgregarCompra
+ * @route {POST} /
+ * @body {Compra} compra - Los detalles de la compra a agregar.
+ * @returns {Compra} La compra agregada con su nuevo ID.
+ */
 router.post("/", (req, res) => {
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      return res.status(500).send("Error reading file");
+      return res.status(500).send("Error al leer el archivo");
     }
     const compras = JSON.parse(data);
-    const newCompra = req.body;
-    newCompra.id = compras.length + 1;
-    compras.push(newCompra);
+    const nuevaCompra = req.body;
+    nuevaCompra.id = compras.length + 1;
+    compras.push(nuevaCompra);
     fs.writeFile(filePath, JSON.stringify(compras), (err) => {
       if (err) {
-        return res.status(500).send("Error writing file");
+        return res.status(500).send("Error al escribir en el archivo");
       }
-      res.send(newCompra);
+      res.send(nuevaCompra);
     });
   });
 });

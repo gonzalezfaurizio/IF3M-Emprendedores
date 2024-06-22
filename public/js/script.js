@@ -1,5 +1,11 @@
+/**
+ * @fileoverview Maneja la lógica del frontend para la gestión de productos, compras y ventas.
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Manejo de productos
+  /**
+   * Obtiene la lista de productos y los muestra en el elemento con id "product-list".
+   */
   fetch("/productos")
     .then((response) => response.json())
     .then((data) => {
@@ -23,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  /**
+   * Maneja el envío del formulario de productos y realiza una solicitud POST para registrar un nuevo producto.
+   */
   const productoForm = document.getElementById("producto-form");
   if (productoForm) {
     productoForm.addEventListener("submit", (e) => {
@@ -41,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Manejo de compras
+  /**
+   * Maneja el envío del formulario de compras y realiza una solicitud POST para registrar una nueva compra.
+   */
   const compraForm = document.getElementById("compra-form");
   if (compraForm) {
     compraForm.addEventListener("submit", (e) => {
@@ -67,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((err) => alert("Error: " + err.message));
     });
 
+    /**
+     * Obtiene la lista de compras y las muestra en el elemento con id "compra-list".
+     */
     fetch("/compras")
       .then((response) => response.json())
       .then((data) => {
@@ -87,7 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Manejo de ventas
+  /**
+   * Maneja el envío del formulario de ventas y realiza una solicitud POST para registrar una nueva venta.
+   */
   const ventaForm = document.getElementById("venta-form");
   if (ventaForm) {
     ventaForm.addEventListener("submit", (e) => {
@@ -113,6 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((err) => alert("Error: " + err.message));
     });
 
+    /**
+     * Obtiene la lista de ventas y las muestra en el elemento con id "venta-list".
+     */
     fetch("/ventas")
       .then((response) => response.json())
       .then((data) => {
@@ -133,7 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Manejo de inicio de sesión
+  /**
+   * Maneja el envío del formulario de inicio de sesión y realiza una solicitud POST para autenticar al usuario.
+   */
   const loginForm = document.getElementById("login-form");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
@@ -160,6 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/**
+ * Redirige a la página de detalles del producto.
+ * @param {number} codigo - El código del producto.
+ */
 function viewProduct(codigo) {
   window.location.href = `productos.html?codigo=${codigo}`;
 }
@@ -235,6 +260,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/**
+ * Elimina un producto utilizando una solicitud DELETE.
+ * @param {number} codigo - El código del producto.
+ */
 function deleteProduct(codigo) {
   fetch(`/productos/${codigo}`, {
     method: "DELETE",
@@ -246,6 +275,9 @@ function deleteProduct(codigo) {
     .catch((err) => alert("Error: " + err.message));
 }
 
+/**
+ * Muestra el formulario de actualización de producto.
+ */
 function showUpdateForm() {
   const form = document.getElementById("update-form");
   if (form) {

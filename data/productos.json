@@ -1,0 +1,14 @@
+[
+  {
+    "codigo": 1,
+    "nombre": "Cuadro pintado a mano",
+    "precio": 100,
+    "imagen": "/images/cuadro_pintado.jpg"
+  },
+  {
+    "codigo": 2,
+    "nombre": "Tapete tejido",
+    "precio": 30,
+    "imagen": "/images/tapete_tejido.jpg"
+  }
+]

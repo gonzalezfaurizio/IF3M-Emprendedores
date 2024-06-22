@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "producto": "Collar de cuentas",
+    "cantidad": 3,
+    "precio": 25
+  },
+  {
+    "id": 2,
+    "producto": "Jarrón de cerámica",
+    "cantidad": 2,
+    "precio": 45
+  }
+]

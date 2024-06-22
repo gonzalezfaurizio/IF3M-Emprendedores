@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "producto": "Pulsera de cuero",
+    "cantidad": 5,
+    "precio": 15
+  },
+  {
+    "id": 2,
+    "producto": "Marco de madera tallado",
+    "cantidad": 1,
+    "precio": 50
+  }
+]
