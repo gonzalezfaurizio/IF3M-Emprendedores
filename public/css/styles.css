@@ -92,15 +92,15 @@ h2 {
 /* Form Styles */
 form {
     background-color: var(--white-color);
-    padding: 2em;
+    padding: 5em;
     border-radius: var(--border-radius);
-    box-shadow: 0 0 20px var(--shadow-color);
-    margin-bottom: 2em;
+    box-shadow: 0 0 30px var(--shadow-color);
+    margin-bottom: 5em;
 }
 
 form label {
     display: block;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
     font-weight: 500;
 }
 
